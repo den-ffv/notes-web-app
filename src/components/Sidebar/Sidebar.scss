@@ -1,0 +1,169 @@
+.sidebar {
+  position: fixed;
+  top: 0px;
+  min-width: 260px;
+  padding: 10px;
+  border-right: 1px solid #f5f5f5;
+  height: 100vh;
+  background: #fff;
+  z-index: 100;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 0px 0px;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px 8px 8px;
+
+      border-radius: 6px;
+      p {
+        margin: 0px 0px 0px 10px;
+      }
+
+      &:hover {
+        img {
+          filter: invert(29%) sepia(82%) saturate(986%) hue-rotate(181deg)
+            brightness(105%) contrast(91%);
+        }
+        color: #1d6fbf;
+        background: #c3e0f9;
+      }
+    }
+  }
+  &__new-note-btn {
+    width: 100%;
+    border-radius: 6px;
+    background: #222;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 15px 0px 15px 0px;
+    padding: 15px 0px 15px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      color: #fff;
+    }
+    img {
+      margin: 0px 0px 0px 10px;
+    }
+  }
+  &__hide-btn {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    border: 1px solid #f5f5f5;
+    border-radius: 50%;
+    top: 60px;
+    right: -14px;
+    img {
+      width: 10px;
+    }
+  }
+  &__link-active {
+    background: #b3d6f4;
+    p {
+      color: #1d6fbf;
+    }
+    img{
+      filter: invert(29%) sepia(82%) saturate(986%) hue-rotate(181deg)
+      brightness(105%) contrast(91%);
+    }
+  }
+  .user {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 20px 0px;
+    .user-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      text-transform: uppercase;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      background: #b3d6fc;
+    }
+    .user-info {
+      margin: 0px 0px 0px 10px;
+    }
+    .user-name {
+      margin: 0px 0px 4px 0px;
+      font-size: 18px;
+    }
+    .user-email {
+      font-size: 16px;
+      color: rgb(135, 135, 135);
+    }
+  }
+}
+.sidebar-close {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+  padding: 10px;
+  border-right: 1px solid #f5f5f5;
+  height: 100vh;
+  &__new-note-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    padding: 15px 0;
+    border-radius: 6px;
+    background: #222;
+    margin: 15px 0px 15px 0px;
+    p {
+      display: none;
+    }
+  }
+  ul {
+    a {
+      justify-content: center;
+      p {
+        display: none;
+      }
+    }
+  }
+  .user {
+    justify-content: center;
+  }
+  .user-info {
+    display: none;
+  }
+  .logo {
+    justify-content: center;
+    &__text {
+      display: none;
+    }
+  }
+}
+
+//-------- logo style -------
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__img {
+  }
+  &__text {
+    font-size: 25px;
+    margin: 0px 0px 0px 13px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+   display: none;
+  }
+}

@@ -1,0 +1,71 @@
+.phome-menu {
+  display: none;
+}
+@media (max-width: 760px) {
+  .phone-menu-btn {
+    display: flex;
+    flex-direction:column;
+    span{
+      display: inline-flex;
+      margin: 2px 0px 2px 0px;
+      width: 20px;
+      height: 2.5px;
+      background: #222;
+    }
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    z-index: 220;
+  }
+  .phome-menu {
+    position: fixed;
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 50px 0px 0px 0px;
+    background: rgb(255, 255, 255);
+    transition: 0.5s;
+    transform: translateX(-100%);
+    &__list-item{
+      margin: 50px 0px 100px 0px;
+    }
+  }
+  .phome-menu-active {
+    transition: 0.5s;
+    transform: translateX(0%);
+  }
+  .menu-link {
+    font-family: 'Comfortaa', cursive;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 0px auto;
+    border-radius: 7px;
+    padding: 10px 20px;
+    &__active{
+      display: flex;
+      align-items: center;
+      background: #b3d6f4;
+      p{
+        color: #1d6fbf;
+      }
+      img{
+        filter: invert(29%) sepia(82%) saturate(986%) hue-rotate(181deg)
+        brightness(105%) contrast(91%);
+      }
+    }
+      &__img {
+        width: 30px;
+      }
+      &__text {
+        font-size: 30px;
+        margin: 0px 0px 0px 20px;
+      }
+  }
+  
+}

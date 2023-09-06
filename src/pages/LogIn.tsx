@@ -5,10 +5,11 @@ import "./Auth.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 type LogInProps = {
+  setUserData: React.Dispatch<React.SetStateAction<object>>;
   setIsAuth: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-const LogIn: React.FC<LogInProps> = ({ setIsAuth }) => {
+const LogIn: React.FC<LogInProps> = ({setUserData, setIsAuth }) => {
   const [email, setEmail] = useState<string>("user@user.com");
   const [password, setPassword] = useState<string>("useruser");
   const [submitting, setSubmitting] = useState<boolean>(false);
@@ -32,7 +33,8 @@ const LogIn: React.FC<LogInProps> = ({ setIsAuth }) => {
         password,
       });
       localStorage.setItem("notesAuthToken", response.data.token);
-      console.log(response);
+      setUserData(response.data)
+
       if (response.status === 200) {
         setIsAuth(localStorage.getItem('notesAuthToken'));
         navigate("/home");

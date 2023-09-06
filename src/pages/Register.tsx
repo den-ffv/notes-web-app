@@ -1,14 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import noteLogo from "/logo.svg";
 import axios from "axios";
 import "./Auth.scss";
 import { useNavigate } from "react-router-dom";
 
 type RegisterProps = {
+  setUserData: React.Dispatch<React.SetStateAction<object>>;
   setIsAuth: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-function Register({ setIsAuth }: RegisterProps) {
+const Register: React.FC<RegisterProps> =({setUserData ,setIsAuth })=>  {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [username, setUsername] = useState<string>("");
@@ -34,7 +35,7 @@ function Register({ setIsAuth }: RegisterProps) {
         }
       );
       localStorage.setItem("notesAuthToken", response.data.token);
-      console.log(response);
+      setUserData(response.data)
       if (response.status === 200) {
         setIsAuth(localStorage.getItem('notesAuthToken'));
         navigate("/home");
